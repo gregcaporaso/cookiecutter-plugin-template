@@ -41,6 +41,18 @@ plugin.methods.register_function(
     outputs=[
         ('concatenated_ints', IntSequence1)
     ],
+    input_descriptions={
+        'ints1': 'The first collection of integers to be concatenated.',
+        'ints2': 'The second collection of integers to be concatenated.',
+        'ints3': 'The third collection of integers to be concatenated.'
+    },
+    parameter_descriptions={
+        'int1': 'The first single integer to be concatenated.',
+        'int2': 'The second single integer to be concatenated.'
+    },
+    output_descriptions={
+        'concatenated_ints': 'The resulting concatenated integers.'
+    },
     name='Concatenate integers',
     description='This method concatenates integers into a single sequence in '
                 'the order they are provided.'
@@ -55,6 +67,16 @@ plugin.visualizers.register_function(
     parameters={
         'key_label': qiime2.plugin.Str,
         'value_label': qiime2.plugin.Str
+    },
+    input_descriptions={
+        'mapping1': 'The first mapping to be visualized.',
+        'mapping2': 'The second mapping to be visualized.'
+    },
+    parameter_descriptions={
+        'key_label': ('The label to include in the visualization for the '
+                      'columns containing mapping keys.'),
+        'value_label': ('The label to include in the visualization for the '
+                        'columns containing mapping values.'),
     },
     name='Visualize two mappings',
     description='This visualizer produces an HTML visualization of two '
